@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<div class="resume-show-container">
+  <h1><%= resume.fullName %></h1>
+
+  <p><strong>Email:</strong> <%= resume.email %></p>
+  <p><strong>Phone:</strong> <%= resume.phone %></p>
+
+  <h2>Education</h2>
+  <p><%= resume.education %></p>
+
+  <h2>Work Experience</h2>
+  <p><%= resume.experience %></p>
+
+  <h2>Key Skills</h2>
+  <p><%= resume.skills %></p>
+
+  <div class="resume-buttons">
+    <a href="/resumes/<%= resume._id %>/edit" class="button">Edit</a>
+
+    <form action="/resumes/<%= resume._id %>?_method=DELETE" method="POST" style="display:inline;">
+      <button type="submit" class="delete-button">Delete</button>
+    </form>
+
+    <a href="/resumes" class="button">Back to Dashboard</a>
+  </div>
+</div>

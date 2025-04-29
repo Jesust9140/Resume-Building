@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<div class="form-container">
+  <h1>Create New Resume</h1>
+
+  <form action="/resumes" method="POST" class="resume-form">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="education">Education</label>
+      <textarea id="education" name="education" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="experience">Work Experience</label>
+      <textarea id="experience" name="experience" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Key Skills</label>
+      <textarea id="skills" name="skills" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="button">Create Resume</button>
+  </form>
+</div>

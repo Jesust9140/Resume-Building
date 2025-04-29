@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Resume Builder</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!-- flash message section -->
+<% if (success && success.length > 0) { %>
+  <div class="flash-success">
+    <%= success %>
+  </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+  <div class="flash-error">
+    <%= error %>
+  </div>
+<% } %>
+
+<!-- navbar at the top -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/">
+      <img src="/images/coding-book-icon.png" alt="Coding Book Icon" class="nav-icon">
+      <span class="nav-title">Resume Builder</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <a href="/resumes">My Resumes</a>
+    <a href="/users/register">Register</a>
+    <a href="/users/login">Login</a>
+    <a href="/users/logout">Logout</a>
+    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/github-icon.png" alt="GitHub Icon" class="nav-icon">
+    </a>
+  </div>
+</nav>
+
+<hr style="margin: 0;">

@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<div class="dashboard-container">
+  <h1>My Resumes</h1>
+
+  <div class="dashboard-buttons">
+    <a href="/resumes/new" class="button">Create New Resume</a>
+  </div>
+
+  <div class="resumes-grid">
+    <% resumes.forEach(function(resume) { %>
+      <div class="resume-card">
+        <h2><%= resume.fullName %></h2>
+        <p><%= resume.email %></p>
+
+        <div class="card-buttons">
+          <a href="/resumes/<%= resume._id %>" class="button">View</a>
+          <a href="/resumes/<%= resume._id %>/edit" class="button">Edit</a>
+
+          <form action="/resumes/<%= resume._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
