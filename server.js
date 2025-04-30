@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
 const path = require('path');
 const flash = require('connect-flash');
+const authMiddleware = require('./config/authMiddleware');
+
 
 // app setup
 const app = express();
@@ -53,6 +55,8 @@ const resumeRoutes = require('./routes/resumes');
 
 app.use('/', indexRoutes);
 app.use('/users', userRoutes);
+// protect resume routes with auth middleware
+app.use(authMiddleware.isLoggedIn);
 app.use('/resumes', resumeRoutes);
 
 // catch all 404 errors
